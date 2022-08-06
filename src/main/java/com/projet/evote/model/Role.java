@@ -1,11 +1,19 @@
 package com.projet.evote.model;
 
 import com.projet.evote.user.User;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
 public class Role {
 
     @SequenceGenerator(
@@ -32,4 +40,10 @@ public class Role {
             inverseJoinColumns = @JoinColumn(
                     name = "privilege_id", referencedColumnName = "id"))
     private List<Privilege> privileges;
+
+
+    public Role(String name) {
+
+    }
+
 }

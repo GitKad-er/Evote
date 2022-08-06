@@ -1,9 +1,18 @@
 package com.projet.evote.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Privilege {
 
     @SequenceGenerator(
@@ -21,4 +30,8 @@ public class Privilege {
 
     @ManyToMany(mappedBy = "privileges")
     private List<Role> roles;
+
+    public Privilege(String name) {
+
+    }
 }
